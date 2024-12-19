@@ -2,6 +2,7 @@ package com.tagit.commons.loadsimulator.web;
 
 import java.security.SecureRandom;
 import java.util.Arrays;
+import java.util.Random;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -44,6 +45,33 @@ public class LoadTestController {
         
         // Create and populate a large array of random integers
         int[] numbers = new int[size];
+        Random rand = new Random();
+        for (int i = 0; i < size; i++) {
+            numbers[i] = rand.nextInt(Integer.MAX_VALUE);
+        }
+
+        // Sum the elements to generate CPU usage
+        long sum = 0;
+        for (int n : numbers) {
+            sum += n;
+        }
+
+        // Sort the array to increase CPU usage further
+        Arrays.sort(numbers);
+    	long end = System.currentTimeMillis();
+    	long elapsed = end - start;
+        log.info("Computation done. Sum of Random Numbers = " + sum + ". Time elapsed = " + elapsed + " ms. on " + Thread.currentThread().toString());
+        return "Computation done. Sum of Random Numbers = " + sum;
+    }
+    
+    @GetMapping("/load/securerandom")
+    public String load2b() {
+    	long start = System.currentTimeMillis();
+        // Define a large size for the array
+        int size = 400000;
+        
+        // Create and populate a large array of random integers
+        int[] numbers = new int[size];
         SecureRandom rand = new SecureRandom();
         for (int i = 0; i < size; i++) {
             numbers[i] = rand.nextInt(Integer.MAX_VALUE);
@@ -62,6 +90,7 @@ public class LoadTestController {
         log.info("Computation done. Sum of Random Numbers = " + sum + ". Time elapsed = " + elapsed + " ms. on " + Thread.currentThread().toString());
         return "Computation done. Sum of Random Numbers = " + sum;
     }
+    
     
     @GetMapping("/load/fibonacci")
     public String loadFibonacci() {
