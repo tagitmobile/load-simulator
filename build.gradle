@@ -3,6 +3,7 @@ plugins {
 	id 'war'
 	id 'org.springframework.boot' version '3.4.0'
 	id 'io.spring.dependency-management' version '1.1.6'
+	id 'eclipse'
 }
 
 group = 'com.tagit.commons'
@@ -14,14 +15,25 @@ java {
 	}
 }
 
+configurations {
+  compileOnly {
+    extendsFrom annotationProcessor
+  }
+}
+
 repositories {
 	mavenCentral()
 }
 
 dependencies {
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+  
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
@@ -29,3 +41,20 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+jar {
+    enabled = false
+}
+
+war {
+    enabled = false
+}
+
+
+task copyWar(type: Copy) {
+    dependsOn bootWar
+    from war, bootJar, bootWar
+    into "deploy"
+}
+
+defaultTasks 'clean', 'eclipse', 'build', 'copyWar'

@@ -1,4 +1,4 @@
-package com.tagit.commons.LoadSimulator;
+package com.tagit.commons.loadsimulator;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
