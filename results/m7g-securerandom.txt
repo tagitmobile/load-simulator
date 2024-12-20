@@ -1,0 +1,54 @@
+$ ab -n 1000 -c 8 http://ec2-13-251-106-123.ap-southeast-1.compute.amazonaws.com:8080/load/securerandom
+This is ApacheBench, Version 2.3 <$Revision: 1879490 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking ec2-13-214-154-126.ap-southeast-1.compute.amazonaws.com (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:
+Server Hostname:        ec2-13-214-154-126.ap-southeast-1.compute.amazonaws.com
+Server Port:            8080
+
+Document Path:          /load/securerandom
+Document Length:        57 bytes
+
+Concurrency Level:      8
+Time taken for tests:   87.485 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      190000 bytes
+HTML transferred:       57000 bytes
+Requests per second:    11.43 [#/sec] (mean)
+Time per request:       699.883 [ms] (mean)
+Time per request:       87.485 [ms] (mean, across all concurrent requests)
+Transfer rate:          2.12 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        2    4   1.8      3      15
+Processing:    76  694  87.4    689    1034
+Waiting:       76  694  87.4    689    1034
+Total:         80  697  87.2    693    1037
+
+Percentage of the requests served within a certain time (ms)
+  50%    693
+  66%    736
+  75%    758
+  80%    773
+  90%    811
+  95%    846
+  98%    878
+  99%    892
+ 100%   1037 (longest request)

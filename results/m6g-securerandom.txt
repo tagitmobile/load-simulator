@@ -1,4 +1,4 @@
-$ ab -n 1000 -c 8 http://ec2-13-251-106-123.ap-southeast-1.compute.amazonaws.com:8080/load/random
+$ ab -n 1000 -c 8 http://ec2-13-251-106-123.ap-southeast-1.compute.amazonaws.com:8080/load/securerandom
 This is ApacheBench, Version 2.3 <$Revision: 1879490 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
@@ -21,34 +21,34 @@ Server Software:
 Server Hostname:        ec2-13-251-106-123.ap-southeast-1.compute.amazonaws.com
 Server Port:            8080
 
-Document Path:          /load/random
+Document Path:          /load/securerandom
 Document Length:        57 bytes
 
 Concurrency Level:      8
-Time taken for tests:   20.432 seconds
+Time taken for tests:   114.401 seconds
 Complete requests:      1000
 Failed requests:        0
 Total transferred:      190000 bytes
 HTML transferred:       57000 bytes
-Requests per second:    48.94 [#/sec] (mean)
-Time per request:       163.457 [ms] (mean)
-Time per request:       20.432 [ms] (mean, across all concurrent requests)
-Transfer rate:          9.08 [Kbytes/sec] received
+Requests per second:    8.74 [#/sec] (mean)
+Time per request:       915.207 [ms] (mean)
+Time per request:       114.401 [ms] (mean, across all concurrent requests)
+Transfer rate:          1.62 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        2   13  97.1      3    1062
-Processing:    41  150  19.8    152     246
-Waiting:       41  150  19.8    152     246
-Total:         44  163  98.5    156    1202
+Connect:        2    7  57.4      3    1067
+Processing:   209  905 116.0    898    1298
+Waiting:      209  905 116.0    898    1298
+Total:        211  911 126.9    903    1960
 
 Percentage of the requests served within a certain time (ms)
-  50%    156
-  66%    158
-  75%    160
-  80%    162
-  90%    174
-  95%    193
-  98%    216
-  99%    248
- 100%   1202 (longest request)
+  50%    903
+  66%    951
+  75%    985
+  80%   1007
+  90%   1062
+  95%   1114
+  98%   1159
+  99%   1202
+ 100%   1960 (longest request)

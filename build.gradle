@@ -7,7 +7,7 @@ plugins {
 }
 
 group = 'com.tagit.commons'
-version = '0.0.2'
+version = '0.0.3'
 
 java {
 	toolchain {
@@ -31,6 +31,13 @@ dependencies {
   
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	
+	// https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation 'com.google.code.gson:gson:2.11.0'
+    
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+    implementation 'org.apache.commons:commons-lang3:3.17.0'
+    
 	
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	
