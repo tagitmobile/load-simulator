@@ -1,0 +1,56 @@
+$ ab -n 1000 -c 8 ec2-18-142-55-85.ap-southeast-1.compute.amazonaws.com:8080/load/securerandom
+This is ApacheBench, Version 2.3 <$Revision: 1879490 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking ec2-18-142-55-85.ap-southeast-1.compute.amazonaws.com (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:
+Server Hostname:        ec2-18-142-55-85.ap-southeast-1.compute.amazonaws.com
+Server Port:            8080
+
+Document Path:          /load/securerandom
+Document Length:        57 bytes
+
+Concurrency Level:      8
+Time taken for tests:   49.747 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      190000 bytes
+HTML transferred:       57000 bytes
+Requests per second:    20.10 [#/sec] (mean)
+Time per request:       397.973 [ms] (mean)
+Time per request:       49.747 [ms] (mean, across all concurrent requests)
+Transfer rate:          3.73 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        2    3   0.7      4      11
+Processing:    70  393  42.3    393     574
+Waiting:       70  393  42.3    393     574
+Total:         73  396  42.3    396     578
+WARNING: The median and mean for the initial connection time are not within a normal deviation
+        These results are probably not that reliable.
+
+Percentage of the requests served within a certain time (ms)
+  50%    396
+  66%    415
+  75%    425
+  80%    432
+  90%    448
+  95%    461
+  98%    481
+  99%    491
+ 100%    578 (longest request)

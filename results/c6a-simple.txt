@@ -1,0 +1,54 @@
+$ ab -n 10000 -c 8 http://ec2-47-129-226-202.ap-southeast-1.compute.amazonaws.com:8080/load/simple
+This is ApacheBench, Version 2.3 <$Revision: 1879490 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking ec2-47-129-226-202.ap-southeast-1.compute.amazonaws.com (be patient)
+Completed 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
+
+
+Server Software:
+Server Hostname:        ec2-47-129-226-202.ap-southeast-1.compute.amazonaws.com
+Server Port:            8080
+
+Document Path:          /load/simple
+Document Length:        37 bytes
+
+Concurrency Level:      8
+Time taken for tests:   22.230 seconds
+Complete requests:      10000
+Failed requests:        0
+Total transferred:      1700000 bytes
+HTML transferred:       370000 bytes
+Requests per second:    449.84 [#/sec] (mean)
+Time per request:       17.784 [ms] (mean)
+Time per request:       2.223 [ms] (mean, across all concurrent requests)
+Transfer rate:          74.68 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        1    4  18.0      3    1069
+Processing:     6   14   2.9     14      32
+Waiting:        6   14   2.9     14      32
+Total:          8   18  18.2     17    1079
+
+Percentage of the requests served within a certain time (ms)
+  50%     17
+  66%     18
+  75%     19
+  80%     20
+  90%     21
+  95%     23
+  98%     25
+  99%     26
+ 100%   1079 (longest request)

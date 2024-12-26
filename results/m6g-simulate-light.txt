@@ -1,0 +1,54 @@
+ab -n 1000 -c 8 http://ec2-13-212-120-132.ap-southeast-1.compute.amazonaws.com:8080/simulate/light
+This is ApacheBench, Version 2.3 <$Revision: 1879490 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking ec2-13-212-120-132.ap-southeast-1.compute.amazonaws.com (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:
+Server Hostname:        ec2-13-212-120-132.ap-southeast-1.compute.amazonaws.com
+Server Port:            8080
+
+Document Path:          /simulate/light
+Document Length:        45 bytes
+
+Concurrency Level:      8
+Time taken for tests:   32.532 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      178000 bytes
+HTML transferred:       45000 bytes
+Requests per second:    30.74 [#/sec] (mean)
+Time per request:       260.253 [ms] (mean)
+Time per request:       32.532 [ms] (mean, across all concurrent requests)
+Transfer rate:          5.34 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        2    4   1.9      3      18
+Processing:   252  255   6.9    254     465
+Waiting:      252  255   6.9    254     465
+Total:        254  258   7.2    257     469
+
+Percentage of the requests served within a certain time (ms)
+  50%    257
+  66%    258
+  75%    258
+  80%    259
+  90%    262
+  95%    264
+  98%    267
+  99%    269
+ 100%    469 (longest request)

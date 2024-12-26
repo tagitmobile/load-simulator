@@ -6,6 +6,7 @@
 ### Ubuntu
 
 ```
+sudo apt update -y
 sudo apt install openjdk-21-jre-headless -y
 java --version
 wget https://github.com/tagitmobile/load-simulator/releases/download/v0.0.3/load-simulator-0.0.3.jar

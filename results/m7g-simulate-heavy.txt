@@ -1,0 +1,55 @@
+$ ab -n 1000 -c 8 ec2-13-212-179-182.ap-southeast-1.compute.amazonaws.com:8080/simulate/heavy
+This is ApacheBench, Version 2.3 <$Revision: 1879490 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking ec2-13-212-179-182.ap-southeast-1.compute.amazonaws.com (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:
+Server Hostname:        ec2-13-212-179-182.ap-southeast-1.compute.amazonaws.com
+Server Port:            8080
+
+Document Path:          /simulate/heavy
+Document Length:        111 bytes
+
+Concurrency Level:      8
+Time taken for tests:   146.930 seconds
+Complete requests:      1000
+Failed requests:        499
+   (Connect: 0, Receive: 0, Length: 499, Exceptions: 0)
+Total transferred:      245053 bytes
+HTML transferred:       111053 bytes
+Requests per second:    6.81 [#/sec] (mean)
+Time per request:       1175.443 [ms] (mean)
+Time per request:       146.930 [ms] (mean, across all concurrent requests)
+Transfer rate:          1.63 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        2    4  33.3      3    1055
+Processing:   786 1162 105.0   1158    1717
+Waiting:      786 1162 105.0   1158    1717
+Total:        790 1166 110.5   1161    2250
+
+Percentage of the requests served within a certain time (ms)
+  50%   1161
+  66%   1208
+  75%   1229
+  80%   1245
+  90%   1293
+  95%   1343
+  98%   1396
+  99%   1439
+ 100%   2250 (longest request)
